@@ -2,5 +2,16 @@
   "extends": [
     "@sanity/eslint-config-studio",
     "next/core-web-vitals"
-  ]
+  ],
+  "rules": {
+    "import/no-anonymous-default-export": ["error", {
+      "allowArray": true,
+      "allowArrowFunction": true,
+      "allowAnonymousClass": false,
+      "allowAnonymousFunction": false,
+      "allowCallExpression": true,
+      "allowLiteral": true,
+      "allowObject": true
+    }]
+  }
 }
