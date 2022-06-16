@@ -1,5 +1,5 @@
 import { SiDatabricks } from 'react-icons/si';
-const typeDef = {
+const componentTypes = {
   'hero': 'Hero',
   'fullwidth-image': 'Fullwidth Image',
   'columns': 'Content Columns',
@@ -11,11 +11,6 @@ export default {
   name: 'components',
   title: 'Page Components',
   type: 'document',
-  validation: Rule => Rule.custom(({asset, type, image}) => {
-    if (type === 'hero' && !asset) return "A file asset is required to be uploaded for the hero component"
-    if (type === 'fullwidth-image' && !image.asset) return "An image is required to be uploaded for the fullwidth image component"
-    return true
-  }),
   fields: [
     {
       name: 'name',
@@ -32,14 +27,9 @@ export default {
       validation: Rule => Rule.required(),
       initialValue: 'columns',
       options: {
-        list: [
-          { title: 'Hero', value: 'hero' },
-          { title: 'Fullwidth Image', value: 'fullwidth-image' },
-          { title: 'Content Columns', value: 'columns' },
-          { title: 'Gallery', value: 'gallery' }
-        ],
-        layout: 'radio',
-        direction: 'horizontal'
+        list: Object.entries(componentTypes).map(entry => ({
+          title: entry.value, value: entry.key
+        })),
       }
     }
   ],
@@ -50,17 +40,6 @@ export default {
     },
     prepare ({ name, columns, type, image }) {
       const retrievePreview = () => {
-        if (type === 'columns' && columns) {
-          const [media] = columns.filter(column => column.image.asset);
-          if (media && media.image) {
-            return media.image;
-          }
-        }
-
-        if (type === 'fullwidth-image' && image) {
-          return image
-        }
-
         return null
       }
 
@@ -69,7 +48,7 @@ export default {
       return {
         title: name,
         media,
-        subtitle: typeDef[type],
+        subtitle: componentTypes[type],
       }
     }
   }

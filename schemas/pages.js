@@ -21,12 +21,12 @@ export default {
       },
       validation: Rule => Rule.required()
     },
-    // {
-    //   name: 'components',
-    //   title: 'Page Components',
-    //   type: 'array',
-    //   of: [{ type: 'reference', to: { type: 'components' } }],
-    // },
+    {
+      name: 'components',
+      title: 'Page Components',
+      type: 'array',
+      of: [{ type: 'reference', to: { type: 'components' } }],
+    },
     {
       name: 'image',
       title: 'SEO Image',

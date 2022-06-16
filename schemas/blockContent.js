@@ -1,8 +1,8 @@
-import React from 'react'
+// import React from 'react'
 
-const BiggerStyle = ({children}) => (
-  <span style={{fontSize: '1.4em'}}>{children}</span>
-)
+// const BiggerStyle = ({children}) => (
+//   <span style={{fontSize: '1.4em'}}>{children}</span>
+// )
 
 export default {
   title: 'Block Content',
@@ -18,7 +18,7 @@ export default {
       // use your content.
       styles: [
         {title: 'Normal', value: 'normal'},
-        {title: 'Bigger', value: 'bigger', blockEditor: { render: BiggerStyle }},
+        // {title: 'Bigger', value: 'bigger', blockEditor: { render: BiggerStyle }},
         {title: 'H1', value: 'h1'},
         {title: 'H2', value: 'h2'},
         {title: 'H3', value: 'h3'},

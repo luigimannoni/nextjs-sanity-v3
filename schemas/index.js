@@ -5,9 +5,12 @@ import components from './components'
 import siteSettings from './siteSettings'
 
 export const schemaTypes = [
-  // siteSettings,
-  // nav,
+  // Documents
+  nav,
   pages,
-  // components,
+  components,
+  siteSettings,
+
+  // Partials
   blockContent,
 ]

@@ -4,21 +4,25 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
+    "next:build": "next build",
+    "next:start": "next start",
+    "next:lint": "next lint",
     "sanity:start": "sanity start",
-    "sanity:build": "sanity build"
+    "sanity:build": "sanity build",
+    "sanity:production:backup": "sanity dataset export production backup/production-$(date +\"%Y%m%d-%H%M%S\").tar.gz",
+    "sanity:develop:backup": "sanity dataset export development backup/development-$(date +\"%Y%m%d-%H%M%S\").tar.gz",
+    "sanity:develop:sync": "npm run sanity:develop:backup && sanity dataset export production backup/prod-sync.tar.gz --overwrite && sanity dataset import backup/prod-sync.tar.gz development --replace && rm backup/prod-sync.tar.gz"
   },
   "dependencies": {
     "@sanity/client": "^3.3.2",
     "@sanity/dashboard": "^3.0.0-v3-studio.0",
     "@sanity/eslint-config-studio": "^2",
+    "@sanity/image-url": "^1.0.1",
     "next": "12.1.6",
     "prettier": "^2.7",
     "react": "18.1.0",
     "react-dom": "18.1.0",
-    "react-icons": "^3.11.0",
+    "react-icons": "^4.4.0",
     "sanity": "^3.0.0-dev-preview.8",
     "sanity-plugin-graph-view": "^3.0.0-v3-studio.0",
     "styled-components": "^5.3.5"

@@ -1,10 +1,10 @@
-import { BsMenuButtonWideFill as icon } from 'react-icons/bs';
+import { BsMenuButtonWideFill } from 'react-icons/bs';
 
 export default {
   name: 'nav',
   title: 'Nav',
   type: 'document',
-  icon,
+  icon: BsMenuButtonWideFill,
   fields: [
     {
       name: 'name',
