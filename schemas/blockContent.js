@@ -1,9 +1,3 @@
-// import React from 'react'
-
-// const BiggerStyle = ({children}) => (
-//   <span style={{fontSize: '1.4em'}}>{children}</span>
-// )
-
 export default {
   title: 'Block Content',
   name: 'blockContent',
@@ -18,7 +12,6 @@ export default {
       // use your content.
       styles: [
         {title: 'Normal', value: 'normal'},
-        // {title: 'Bigger', value: 'bigger', blockEditor: { render: BiggerStyle }},
         {title: 'H1', value: 'h1'},
         {title: 'H2', value: 'h2'},
         {title: 'H3', value: 'h3'},
@@ -27,7 +20,7 @@ export default {
       ],
       lists: [
         {title: 'Bullet', value: 'bullet'},
-        {title: 'Numbered', value: 'number'}
+        {title: 'Numbered', value: 'number'},
       ],
       // Marks let you mark up inline text in the block editor.
       marks: {
@@ -45,15 +38,15 @@ export default {
                 title: 'URL',
                 name: 'href',
                 type: 'url',
-                validation: Rule => Rule.uri({
+                validation: (Rule) => Rule.uri({
                   allowRelative: true,
-                  scheme: ['http', 'https', 'mailto', 'tel']
-                })
-              }
-            ]
-          }
-        ]
-      }
+                  scheme: ['http', 'https', 'mailto', 'tel'],
+                }),
+              },
+            ],
+          },
+        ],
+      },
     },
     // You can add additional types here. Note that you can't use
     // primitive types such as 'string' and 'number' in the same array
@@ -62,52 +55,5 @@ export default {
     //   type: 'image',
     //   options: {hotspot: true}
     // }
-    {
-      name: 'break',
-      type: 'object',
-      title: 'Break',
-      fields: [
-        {
-          name: 'style',
-          type: 'string',
-          options: {
-            list: [
-              'Line',
-              'Invisible'
-            ],
-          }
-        }
-      ]
-    },
-    {
-      name: 'icon',
-      type: 'object',
-      title: 'Icon paragraph',
-      fields: [
-        {
-          name: 'style',
-          type: 'string',
-          options: {
-            list: [
-              'Address',
-              'LinkedIn',
-              'Twitter',
-              'Facebook',
-              'Instagram',
-              'Email',
-              'Phone'
-            ],
-          }
-        },
-        {
-          name: 'text',
-          type: 'string',
-        },
-        {
-          name: 'link',
-          type: 'string',
-        }
-      ]
-    }
-  ]
+  ],
 }

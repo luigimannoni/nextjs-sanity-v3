@@ -8,7 +8,7 @@ export default {
       title: 'Name',
       description: 'Public name of the page, this will be displayed in the browser\'s title bar and on navigation menus.',
       type: 'string',
-      validation: Rule => Rule.required()
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'slug',
@@ -19,7 +19,7 @@ export default {
         source: 'name',
         maxLength: 100,
       },
-      validation: Rule => Rule.required()
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'components',
@@ -33,7 +33,7 @@ export default {
       description: 'Image used for search engine purposes and when sharing this page on social medias. If not set, the default website logo will be used.',
       type: 'image',
       options: {
-        hotspot: true
+        hotspot: true,
       },
     },
     {
@@ -42,8 +42,8 @@ export default {
       description: 'Image used at the vey end of the page below the footer. If not set it\'ll fallback to a default image.',
       type: 'image',
       options: {
-        hotspot: true
+        hotspot: true,
       },
     },
-  ]
+  ],
 }

@@ -12,6 +12,9 @@
       "allowCallExpression": true,
       "allowLiteral": true,
       "allowObject": true
-    }]
+    }],
+    "semi": ["error", "never"],
+    "arrow-parens": ["error", "always"],
+    "comma-dangle": ["error", "always-multiline"]
   }
 }

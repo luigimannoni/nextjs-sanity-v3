@@ -4,6 +4,6 @@ import { projectId, dataset } from './sanity.config'
 export default createCliConfig({
   api: {
     projectId,
-    dataset
-  }
+    dataset,
+  },
 })
